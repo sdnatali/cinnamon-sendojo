@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html data-wf-site="52facc1b0998ff7951000098">
+<head>
+<meta charset="utf-8">
+<title>Sendo Dojo - Contato</title>
+<meta name="description" content="Academia Sendo de artes marciais Aikido e Jodo, localizado em São Paulo, Lapa.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" type="text/css" href="css/webflow.css">
+<link rel="stylesheet" type="text/css" href="css/sendodojo.webflow.css">
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrapValidator.min.css" rel="stylesheet">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+
+<script>
+    WebFont.load({
+      google: {
+        families: ["Montserrat:400,700","Bitter:400,700","Oswald:300,400,700","Varela:400","Droid Sans:400,700","Ubuntu:300,400,500,700"]
+      }
+    });
+  </script>
+<script>
+    if (/mobile/i.test(navigator.userAgent)) document.documentElement.className += ' w-mobile';
+  </script>
+<link rel="shortcut icon" type="image/x-icon" href="images/logo.gif">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+<link rel="apple-touch-icon" href="images/logo.gif">
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-48900911-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</head>
+<body>
+
+	<div class="section grey footer">
+		<div class="w-container">
+			<div class="w-row">
+				<div class="w-col w-col-4">
+					<h4 class="section grey footer titulo">Contate</h4>
+					<a class="section grey footer link" href="tel:+551125320975">(11) 2532-0975</a> <a class="section grey footer link"
+						data-toggle="modal" data-target="#contatoModal" id="contato-link">Mande um e-mail</a>
+
+					<!-- Modal -->
+
+					<div class="modal fade" id="contatoModal" tabindex="-1" role="dialog" aria-labelledby="Sendo Dojo"
+						aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+
+								<form class="form-horizontal" role="form" id="form-contato" name="form-contato"
+									data-bv-message="O valor não é válido."
+									data-bv-feedbackicons-valid="glyphicon glyphicon-ok form-control-feedback"
+									data-bv-feedbackicons-invalid="glyphicon glyphicon-remove form-control-feedback"
+									data-bv-feedbackicons-validating="glyphicon glyphicon-refresh form-control-feedback"
+									data-bv-submitbuttons="#contato-enviar">
+
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">
+											<span aria-hidden="true">&times;</span> <span class="sr-only">Fechar</span>
+										</button>
+										<h4 class="modal-title" id="myModalLabel">Contate por e-mail</h4>
+									</div>
+									<div class="modal-body">
+
+										<div class="form-group" id="seuNomeFG">
+											<label for="seuNome" class="col-sm-4 control-label">Seu nome</label>
+											<div class="col-sm-8">
+												<input type="text" class="form-control" name="seuNome" data-bv-notempty="true"
+													data-bv-notempty-message="Informe seu nome para contato." />
+											</div>
+										</div>
+
+										<div class="form-group" id="seuSexoFG">
+											<label for="seuSexo" class="col-sm-4 control-label">Sexo</label>
+											<div class="col-sm-8 radio">
+												<label class="radio-inline"> <input type="radio" name="seuSexo" value="M" data-bv-notempty="true"
+													data-bv-notempty-message="Informe seu sexo para facilitar o contato." />Masculino
+												</label> <label class="radio-inline"> <input type="radio" name="seuSexo" value="F" />Feminino
+												</label>
+											</div>
+										</div>
+
+										<div class="form-group" id="seuEmailFG">
+											<label for="seuEmail" class="col-sm-4 control-label">Seu e-mail</label>
+											<div class="col-sm-8">
+												<input type="email" class="form-control" name="seuEmail" id="seuEmail" placeholder="seuemail@seudominio"
+													data-bv-emailaddress="true" data-bv-notempty="true"
+													data-bv-notempty-message="Informe seu e-mail para contato." />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="seuFone" class="col-sm-4 control-label">Seu fone</label>
+											<div class="col-sm-8">
+												<input type="text" class="form-control" name="seuFone" data-bv-notempty="true"
+													data-bv-notempty-message="Informe seu fone para contato." />
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="seuMotivo" class="col-sm-4 control-label">Qual é o motivo do contato?</label>
+											<div class="col-sm-8">
+
+												<div class="checkbox">
+													<label> <input id="seuMotivo" name="seuMotivo" type="checkbox"
+														value="Gostaria de agendar uma visita." data-bv-notempty="true"
+														data-bv-notempty-message="Informe pelo menos um motivo do contato."> Gostaria de agendar uma
+														visita.
+													</label>
+												</div>
+												<div class="checkbox">
+													<label> <input id="seuMotivo" name="seuMotivo" type="checkbox"
+														value="Gostaria de mais informações sobre as aulas e horários."> Gostaria de mais informações
+														sobre as aulas e horários.
+													</label>
+												</div>
+												<div class="checkbox">
+													<label> <input id="seuMotivo" name="seuMotivo" type="checkbox" value="Tenho outras dúvidas.">
+														Tenho outras dúvidas.
+													</label>
+												</div>
+
+											</div>
+										</div>
+
+										<div class="form-group">
+											<label for="seusComentarios" class="col-sm-4 control-label">Comentários e dúvidas</label>
+											<div class="col-sm-8">
+												<textarea class="form-control" rows="6" id="seusComentarios" name="seusComentarios" data-bv-notempty="true"
+													data-bv-notempty-message="Apresente suas duvidas ou comentarios."></textarea>
+											</div>
+										</div>
+
+									</div>
+
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+										<button type="button" class="btn btn-primary" id="contato-enviar">Enviar</button>
+									</div>
+
+								</form>
+
+							</div>
+						</div>
+					</div>
+
+					<div class="modal fade" id="contatoSucessoModal">
+						<div class="modal-dialog">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">
+										<span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span>
+									</button>
+									<h4 class="modal-title">Contato por e-mail</h4>
+								</div>
+								<div class="modal-body">
+									<div class="form-group">
+										<label for="seusComentarios" class="control-label">Enviado com sucesso. Aguarde o contato do Dojo.</label>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="w-col w-col-4">
+					<h4 class="section grey footer titulo">Visite</h4>
+					<div>
+						Rua Aurélia, 192 - Sobreloja <br>(Próximo a estação Ciência) <br>Lapa - São Paulo - SP
+					</div>
+					<a class="section grey footer link" href="nosso-dojo.html">Veja mapa</a>
+				</div>
+				<div class="w-col w-col-4">
+					<h4 class="section grey footer titulo">Siga</h4>
+					<div class="w-row">
+						<div class="w-col w-col-9">
+							<a class="w-inline-block social-button" href="https://www.facebook.com/SendoDojodeAikido"> <img
+								src="images/facebook-icon.png" width="21px" alt="Icone do facebook">
+							</a>
+						</div>
+						<div class="w-col w-col-3">
+							<div class="w-widget w-widget-facebook">
+								<iframe
+									src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FSendoDojodeAikido&amp;layout=box_count&amp;action=like&amp;show_faces=false&amp;share=false"
+									scrolling="no" frameborder="0" allowtransparency="true"
+									style="border: none; overflow: hidden; width: 55px; height: 65px;"></iframe>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w-container">
+			<img class="logo-in-footer" src="images/logo.png" width="25px" alt="Academia Sendo">
+		</div>
+		<div class="copyright">Copyright © 2014 Sendo Dojo Aikido. Todos os direitos reservados.</div>
+	</div>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrapValidator.js"></script>
+	<script src="js/language/pt_BR.js"></script>
+
+	<script type="text/javascript" src="js/webflow.js"></script>
+	<script type="text/javascript" src="js/sendo.js"></script>
+	<script type="text/javascript">
+  
+  	$(document)
+  		.ready(
+  			function() {
+  	
+	  		$('#form-contato')
+	  			.bootstrapValidator()
+	  			.on('success.form.bv', function(e, data) 
+	  				{
+	  				var mensagem = "";
+					var values = {};
+					var formArray = $(this).serializeArray();
+					
+					$.each(formArray, function(i, field) {
+
+						if( Object.prototype.toString.call( values[field.name] ) === '[object Array]' ){
+							values[field.name].push(field.value);
+							
+						} else if( values[field.name] == undefined){
+							values[field.name] = field.value;
+						
+						} else {
+							values[field.name] = [values[field.name], field.value];
+
+						}
+					    mensagem = mensagem + field.name + "=" + field.value + ", "; 
+					});
+	
+					sendFaleConosco(
+						values["seuNome"], 
+						values["seuSexo"], 
+						values["seuEmail"], 
+						values["seuFone"], 
+						values["seuMotivo"], 
+						values["seusComentarios"] );
+
+					$('#contatoModal').modal('hide');
+					$(this).data('bootstrapValidator').resetForm(true);
+					$('#contatoSucessoModal').modal('show');
+				
+	        		}
+	        	);
+  	
+  			}
+  		);
+
+	$('#contato-enviar').click(function() 
+		{
+		
+			$('#form-contato')
+				.data('bootstrapValidator')
+					.validate();
+
+		}
+	);
+  
+  </script>
+</body>
+</html>
