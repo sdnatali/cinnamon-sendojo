@@ -1,86 +1,81 @@
-var emailContato = "lhojinakamura@yahoo.com.br";
+//var emailContato = ["contato@sendojo.org.br", "Lhoji san"];
+var emailContato = ["lhojinakamura@yahoo.com.br", "Lhoji san"];
+//var emailContato = ["cidaoehnois@gmail.com", "Sido san"];
 
 function sendFaleConosco(nome, sexo, email, fone, motivo, comentarios) {
 	
 	var html = "";
-	html = html + "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" ?>";
-	html = html + "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">";
-	html = html + "<html xmlns=\"http://www.w3.org/1999/xhtml\">";
-	html = html + "<head>";
-	html = html + "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\" />";
-	html = html + "<title>Email</title>";
-	html = html + "<style>";
-	html = html + "	body {";
-	html = html + "		font-family: tahoma;";
-	html = html + "		font-size: 10;";
-	html = html + "	}";
-	html = html + "</style>";
-	html = html + "</head>";
-	html = html + "<body>";
+	var head = "";
+	var body = "";
+	var content = "";
+	
+	content = content + "<div style=\"font-family: tahoma;font-size: 10;\">";
 	
 	if( sexo == "M"){
-		html = html + "<p>O Sr. " + nome + " entrou em contato pelo site sendojo.org.br e ";
+		content = content + "<p>O Sr. " + nome + " entrou em contato pelo site sendojo.org.br e ";
 		
 	} else {
-		html = html + "<p>A Sra. " + nome + " entrou em contato pelo site sendojo.org.br e ";
+		content = content + "<p>A Sra. " + nome + " entrou em contato pelo site sendojo.org.br e ";
 		
 	}
 	
 	if( motivo == "" || motivo == undefined){
-		html = html + "não informou seus interesses.</p>";
+		content = content + "nn&atilde;oo informou seus interesses.</p>";
 		
 	} else if( Object.prototype.toString.call( motivo ) === '[object Array]'){
-		html = html + "tem os seguintes interesses:</p>";
-		html = html + "<ul>";
+		content = content + "tem os seguintes interesses:</p>";
+		content = content + "<ul>";
 		
 		for( i = 0; i < motivo.length; i++){
-			html = html + "<li>" + motivo[i] + "</li>";
+			content = content + "<li>" + motivo[i] + "</li>";
 		}
-		html = html + "</ul>";
+		content = content + "</ul>";
 
 	} else {
-		html = html + "tem os seguintes interesses:</p>";
-		html = html + "<ul>";
-		html = html + "<li>" + motivo + "</li>";
-		html = html + "</ul>";
+		content = content + "tem os seguintes interesses:</p>";
+		content = content + "<ul>";
+		content = content + "<li>" + motivo + "</li>";
+		content = content + "</ul>";
 	}
 	
-	html = html + "		<p>Suas informações de contato são:</p>";
-	html = html + "		<ul>";
-	html = html + "			<li><b>Fone: </b>" + fone + "</li>";
-	html = html + "			<li><b>Email: </b>" + email + "</li>";
-	html = html + "			<li><b>Comentários: </b>" + comentarios + "</li>";
-	html = html + "		</ul>";
-	html = html + "	</body>";
+	content = content + "		<p>Suas informa&ccedil;&otilde;es de contato sn&atilde;oo:</p>";
+	content = content + "		<ul>";
+	content = content + "			<li><b>Fone: </b>" + fone + "</li>";
+	content = content + "			<li><b>Email: </b>" + email + "</li>";
+	content = content + "			<li><b>Coment&aacute;rios: </b>" + comentarios + "</li>";
+	content = content + "		</ul>";
+	
+	body = body + "<body>";
+	body = body + content;
+	body = body + "	</body>";
+	
+	head = head + "<head>";
+	head = head + "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=ISO-8859-1\" />";
+	head = head + "<title>Email</title>";
+	head = head + "</head>";
+	
+	html = html + "<?xml version=\"1.0\" encoding=\"ISO-8859-1\" ?>";
+	html = html + "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">";
+	html = html + "<html xmlns=\"http://www.w3.org/1999/xhtml\">";
+	html = html + head;
+	html = html + body;
 	html = html + "	</html>";
 	
-	$.ajax({
-		  type: "POST",
-		  url: "https://mandrillapp.com/api/1.0/messages/send.json",
-		  data: {
-		    'key': 'vFfDqq0glKQpQpZfVNHIaw',
-		    'message': {
-		      'headers': {
-		    	  'Content-Type' : 'text/html;charset=ISO-8859-1',
-		    	  'Content-Transfer-Encoding' : 'quoted-printable'
-		      },
-		      'from_email': email,
-     	      'from_name': 'Contato Sendo Dojo',
-		      'to': [
-		          {
-		            'email': emailContato,
-		            'name': 'Lhoji San',
-		            'type': 'to'
-		          }
-		      ],
-		      'subject': 'Contato Site Sendo Dojo: ' + nome,
-		      'html': html
-		    }
-		  }
-		 }).done(function(response) {
-		   console.log(response); // if you're into that sorta thing
+	$.ajax(
+			{
+				type: "POST",
+				url: "http://www18.locaweb.com.br/scripts/FormMail.pl",
+				data: {
+					'email': 'contato@sendojo.org.br',
+				    'recipient': emailContato[0],
+				    'subject': 'Contato Site Sendo Dojo: ' + nome,
+				    'mensagem': content
+				}
+				
+			}
+		 ).done(function(response) {
+			 console.log(response);
 		 });
-
 
 }
 
